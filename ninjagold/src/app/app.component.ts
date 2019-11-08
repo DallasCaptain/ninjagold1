@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpService } from './http.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ninjagold';
 
+  constructor(private _httpService: HttpService){}
 
   submitform(whichform: any): void { 
     const actions ={
@@ -20,6 +22,15 @@ export class AppComponent {
     console.log(`Click event is working from form: ${whichform}`);
 }
 
+  makebob(bobsname: any): void{
+
+  }
+
+  getBobs(){
+    let tempObservable = this._httpService.getBobs();
+    // subscribe to the Observable and provide the code we would like to do with our data from the response
+    
+  }
 
 
 }

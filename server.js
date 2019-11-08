@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const session = require('express-session');
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/ninjagold', {useNewUrlParser: true});
+
 const server = app.listen(8000, () => console.log("still listening on port 8000"));
 const io = require('socket.io')(server);
 require('./server/config/routes.js')(app)
