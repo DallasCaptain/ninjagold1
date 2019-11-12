@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
 
 @Component({
@@ -8,9 +8,12 @@ import { HttpService } from './http.service';
 })
 export class AppComponent {
   title = 'ninjagold';
-
+  quote = 'default'
   constructor(private _httpService: HttpService){}
 
+  ngOnInit(){
+    
+  }
   submitform(whichform: any): void { 
     const actions ={
       'FARM':[2,4],
@@ -30,6 +33,10 @@ export class AppComponent {
     let tempObservable = this._httpService.getBobs();
     // subscribe to the Observable and provide the code we would like to do with our data from the response
     
+  }
+
+  receiveQuote($event){
+    this.quote = $event
   }
 
 

@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 
 import { HttpService } from './http.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TaskComponent } from './task/task.component';
+import { TasktalkService } from './tasktalk.service';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [HttpService],
+  providers: [HttpService,TasktalkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
